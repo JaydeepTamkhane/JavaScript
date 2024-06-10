@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM WITH CHAI AUR CODE</title>
+</head>
+<body style="background-color: black;  color: white;">
+    <div class="parent">
+        <div class="day">MONDDAY</div>
+        <div class="day">TUESDAY</div>
+        <div class="day">WEDNESDAY</div>
+        <div class="day">THURSDAY</div>
+    </div>
+</body>
+
+
+<script>
+    let parent=document.querySelector('.parent')
+    // console.log(parent)
+    // console.log(parent.children);
+    // // using this we get html collection which is similar to array but not array
+
+    // console.log(parent.children[1].innerText);
+    // due to it acts like an array we can access its element
+
+    // for (let index = 0; index < parent.children.length; index++) {
+    //     console.log(parent.children[index].innerText);
+    //     // due to inner texxt we got the text in it
+    // }
+
+    // console.log(parent.firstElementChild)
+    // got the monday due which is first child of parent class div
+
+    // similarly
+    // console.log(parent.lastElementChild);
+
+
+    // as it is only querryselector then only the first div of day class will be selected
+
+    let dayone=document.querySelector('.day')
+    // we got monday div
+    // console.log(dayone)
+    // dayone.style.backgroundColor='red'
+    // dayone.style.color='blue'
+
+
+    // console.log(dayone.parentElement)
+    // its parent element is parent div 
+    // this method is eassy to track and access the immediate parent element
+
+    // console.log(dayone.nextElementSibling);
+    // next sibling that is tuesday
+
+
+    // console.log(parent.childNodes)
+    // total elemts in the parent div including text field
+
+
+</script>
+</html>
+
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: black; color: white">
+    <ul>
+      <li class="language">JavaScript</li>
+    </ul>
+  </body>
+  <script>
+    function addlanguagename(languagename){
+        // we have createed a textnode just
+        let textnode=document.createTextNode(languagename)
+        // we have created a empty li
+        let li=document.createElement('li')
+        // we have appended the  textnode in the empty li
+        li.appendChild(textnode)
+
+        // we have selected the language li
+        let catchli=document.querySelector('.language')
+        // appened the li to document li 
+        catchli.appendChild(li)
+    }
+
+    addlanguagename("C++")
+    addlanguagename("Java")
+    addlanguagename("Python")
+
+
+    let secondlan=document.querySelector("li:nth-child(2)")
+    // java was at the 2nd index
+
+    let li=document.createElement('li')
+    let textnode=document.createTextNode("Ruby")
+    li.append(textnode)
+
+    secondlan.replaceWith(li)
+
+
+
+    // removal
+    let lastchildofli=document.querySelector('li:nth-child(2)');
+    lastchildofli.remove()
+
+
+
+
+
+  </script>
+</html>
