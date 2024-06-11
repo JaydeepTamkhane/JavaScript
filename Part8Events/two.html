@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JD</title>
+</head>
+<body>
+    <h1 id="heading">LEARNING JS</h1>
+    <button id="stop">STOP</button>
+</body>
+
+<script>
+
+    const funtToChangeHeading=function(){
+        document.querySelector('#heading').innerHTML="HTML CSS AND JS"
+    }
+    // setTimeout(function(){
+    //     console.log("timeout called after 2 sec")
+    // },2000)
+
+    let timeOutForHeading=setTimeout(funtToChangeHeading, 2000);
+
+    // now the heading iss getting chaged after 2 sec so we will stop it by changeingg
+    // by clicking stop the timeout is stopped
+    document.querySelector('#stop').addEventListener('click',function(){
+        // reference of the timeout need to be passed
+        clearTimeout(timeOutForHeading)
+        console.log("stoped the headin from changing")
+    })
+
+</script>
+</html>

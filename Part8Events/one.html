@@ -59,6 +59,89 @@
   </body>
 
   <script>
+
+
+
+    // document.querySelector('#images').addEventListener('click',function(e){
+    //   console.log("inside the images");
+    // },false)
+    // document.querySelector('#owl').addEventListener('click',function(e){
+    //   console.log("inside the owl");
+    //   // comment the below line first to understand
+    //   e.stopPropagation();
+    // },false)
+
+
+    // flase => bubbling
+    // true => capturing n=opposite to bubbling
+
+
+    // the default nature of the event is bubble from lower to higher means inside to outside
+    // the third parameter is optionnal and it is responsible for this nature 
+    // it is default fals
+
+    // output
+    // for both third parameter as false or no parameter
+    // inside the owl
+    // inside the images
+
+
+    // is the third paratmeter is made true
+    //the output order chages from outside to inside and the 
+    // output
+    // inside the images
+    // inside the owl
+
+
+
+    // e.stopPropogation is used to stop bubbling
+    //if we click on the owl images then only the "insede the owl" will execute and further bubbling will stop
     
+
+
+    // document.querySelector('#google').addEventListener('click',function(e){
+    //   // the below e.preventDefault() is used to prevent the defalut behaivior of the anchor tag click
+    //   e.preventDefault()
+    //   e.stopPropagation()
+    //   console.log("inside the google tag")
+    // })
+
+
+    document.querySelector('#images').addEventListener('click',function(e){
+      e.stopPropagation()
+      // we get the image tag with this target or the elemt on which we click
+
+      // console.log(e.target);
+
+      // but the image is placed under a li if we delete just image then the li will stay so we need to 
+      // select the parent li of it
+
+      // console.log(e.target.parentNode)
+
+      // now we are getting the specific li parent for that image
+
+      // removing the parent element means the image
+      // let elementToBeRemoved=e.target.parentNode
+      // elementToBeRemoved.remove()
+      // this method removes the corresponding element
+
+      // in the above method thier as an issue as we are just selecting the parent element of the target 
+      // which is bad what iff we click on the li then the parent is ul and everythign get removed
+
+
+
+      // so will will use tagName new property
+      // console.log(e.target.tagName)
+
+
+      if(e.target.tagName==='IMG'){
+        let elementToBeRemoved=e.target.parentNode;
+        elementToBeRemoved.remove()
+      }
+    },false)
+
+
+
+
   </script>
 </html>
