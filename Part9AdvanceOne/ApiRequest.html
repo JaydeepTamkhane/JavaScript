@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;color: aliceblue;">
+    <h1>XMLHttpsRequest</h1>
+</body>
+
+<script>
+
+    let requestUrl='https://api.github.com/users/JaydeepTamkhane'
+
+    const xhr= new XMLHttpRequest();
+
+    xhr.onreadystatechange=function(){
+        console.log(xhr.readyState);
+
+
+
+        if(xhr.readyState===4){
+            // the data type of responseText is by default String
+            // so we need to convert it to JSON 
+            // JSON -parse method convert the string to JSON object
+            let data=JSON.parse(this.responseText);
+            // now to typeof it will show JSON
+            console.log(data.followers);
+        }
+    }
+     xhr.open('GET',requestUrl)
+     xhr.send()
+
+</script>
+</html>
