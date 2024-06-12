@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JD</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React{
+        constructor(){
+
+            this.library="React",
+            this.serve="https://localhost:3000"
+            document.querySelector('button')
+            // this statement without bind in handleclick represent the button 
+            // .addEventListener('click',this.handleClick)
+
+            // to represent the react class inside the handle click we need to use bind like this
+
+            .addEventListener('click',this.handleClick.bind(this))
+        }
+        handleClick(){
+            console.log("button clicked");
+            console.log(this);
+        }
+    }
+
+    const app= new React()
+</script>
+</html>
