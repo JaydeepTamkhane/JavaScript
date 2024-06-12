@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure aur js</title>
+  </head>
+  <body style="background-color: black; color: aliceblue">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+  </body>
+  <script>
+    // function init() {
+    //   let name = "Mozilla";
+    //   function displayName() {
+    //     console.log(name);
+    //   }
+    //   displayName();
+    // }
+    // init();
+
+    // function outer(){
+    //     let username="jaydeep";
+    //     function inner(){
+    //         console.log("inner",username);
+    //     }
+    //     inner()
+    // }
+    // outer()
+
+    // not alound in outer scope
+    // console.log("To outer ",username);
+
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // uptill now it was just what is availabel from inside the funtion and
+    // outside the  funtion normal scoping which you already know is discussed
+
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    // lexical scope is nothing but the coplete scope which is all inner and outer funtions
+    // closures is the returing a function
+  </script>
+
+  <script>
+    // document.getElementById("orange").onclick = function () {
+    //   document.body.style.backgroundColor = "orange";
+    // };
+    // document.getElementById("green").onclick = function () {
+    //   document.body.style.backgroundColor = "green";
+    // };
+
+
+
+    function clickHandler(color){
+        // this will not work
+        // document.body.style.backgroundColor = `${color}`;
+
+        return function(){
+            document.body.style.backgroundColor = `${color}`;
+        }
+        
+        // this will not also work
+        // return document.body.style.backgroundColor = `${color}`;
+    }
+
+    document.getElementById("orange").onclick =clickHandler("orange")
+    document.getElementById("green").onclick =clickHandler("green")
+
+
+  </script>
+</html>
