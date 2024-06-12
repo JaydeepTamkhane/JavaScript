@@ -60,3 +60,62 @@ promiseFour
   }).finally(function(){
     console.log("finally the promisefour is either resolved or rejected");
   })
+
+
+
+const promiseFive=new Promise(function(resolve,reject){
+  setTimeout(function(){
+    let error=true;
+    if(!error){
+      resolve({username:"sneha",email:"snehatamkhane@gmail.com"});
+    }else{
+      reject("ERROR has occured for sneha")
+    }
+  },1000)
+})
+
+
+
+async function cosumePromiseFive(){
+  try{
+    let response=await promiseFive;
+    console.log(response);
+  }
+  catch(error){
+    console.log(error);
+  }
+}
+
+cosumePromiseFive()
+
+
+async function getUser(){
+  try{
+    let response =await fetch('https://api.github.com/users/JaydeepTamkhane');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    let data= await response.json()
+    console.log(data);
+    console.log(data.login);
+  }
+  catch(error){
+    console.log("E: ",error);
+  }
+}
+
+// getUser()
+
+
+
+fetch('https://api.github.com/users/JaydeepTamkhane').then(function(user){
+  let data=user.json()
+  return data;
+}).then(function(data){
+  console.log(data);
+}).catch(function(error){
+  console.log("the eroor has occured ",error);
+}).finally(function(){
+  console.log("either the fectch request is resolved or rejected");
+})
+
